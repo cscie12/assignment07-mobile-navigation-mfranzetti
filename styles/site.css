@@ -1,0 +1,107 @@
+:root {
+    --nav-bgcolor: darkred;
+    --nav-color: white;
+
+    --nav-bgcolor2: blue;
+    --nav-color2: yellow;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: helvetica, sans-serif;
+    margin: 0;
+}
+
+main,
+header h1 {
+    margin: 0 2rem;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li a {
+    padding: 1em;
+}
+
+footer {
+    margin-top: 4rem;
+    padding: 0.5rem;
+    background-color: white;
+    border-top: thin solid black;
+}
+
+footer p {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
+
+nav a:link,
+nav a:visited,
+nav a:hover,
+nav a:active {
+    display: block;
+    background-color: var(--nav-bgcolor);
+    color: var(--nav-color);
+    text-decoration: none;
+}
+
+nav a:hover {
+    background-color: var(--nav-color2);
+    color: var(--nav-bgcolor2);
+}
+
+nav {
+    min-height: 40px;
+    background-color: var(--nav-bgcolor);
+    background-image: url(../images/pancake-menu.svg);
+    background-repeat: no-repeat;
+    padding-top: 40px;
+}
+
+/*
+The default view has the nav ul hidden with the class "collapsed" written in the HTML
+*/
+
+ul.collapsed {
+    display: none;
+}
+
+nav.reveal {
+    background-image: url(../images/x-menu.svg);
+}
+
+@media (min-width: 768px) {
+    nav ul,
+    nav ul.collapsed {
+        display: flex;
+    }
+    nav {
+        padding-top: 0;
+        background-image: none;
+    }
+    nav ul li {
+        flex-grow: 1;
+        flex-shrink: 1;
+        flex-basis: 10rem;
+    }
+
+nav a:link,
+nav a:visited,
+nav a:hover,
+nav a:active {
+    text-align: center;
+    padding: 0.5rem;
+}
+
+nav a:hover { 
+    background-color: var(--nav-color);
+    color: var(--nav-bgcolor);
+    }
+}
